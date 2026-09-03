@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software Engineer — Utility Systems</title>
+<meta name="description" content="Software engineer building utility and metering software. Toronto, Canada.">
+
+<!--
+  ============================================================
+  EDIT THESE BEFORE PUBLISHING (search for the word EDIT):
+  1. Your name, headline, email, GitHub, LinkedIn
+  2. Company names + year ranges (I transcribed them from your
+     dictation, so please correct the spelling)
+  3. Project descriptions
+  4. Skills list
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#ECEDE7;
+    --ink:#16211F;
+    --muted:#68746F;
+    --line:#C9CCC3;
+    --signal:#E9A11B;
+    --copper:#A2542A;
+    --max:64rem;
+  }
+
+  *{box-sizing:border-box}
+
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation:none !important; transition:none !important}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:1.0625rem;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+
+  h1,h2,h3,.mono{font-family:"Archivo",system-ui,sans-serif}
+
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--copper)}
+  a:hover{color:var(--copper)}
+  a:focus-visible{outline:2px solid var(--copper);outline-offset:3px;border-radius:2px}
+
+  /* ---------- hero ---------- */
+  header{padding:5rem 0 2.5rem}
+
+  h1{
+    font-size:clamp(2.6rem,9vw,5.25rem);
+    font-weight:800;
+    letter-spacing:-0.035em;
+    line-height:0.95;
+    margin:0 0 1.25rem;
+  }
+
+  .lede{
+    font-size:clamp(1.15rem,3.6vw,1.5rem);
+    font-weight:300;
+    line-height:1.45;
+    max-width:34ch;
+    margin:0 0 2rem;
+  }
+
+  .where{
+    font-family:"Archivo",sans-serif;
+    font-size:0.8125rem;
+    font-weight:500;
+    letter-spacing:0.02em;
+    color:var(--muted);
+    margin:0;
+  }
+
+  /* the one bold moment: a load line across the career */
+  .loadline{display:block;width:100%;height:78px;margin:2.5rem 0 0;overflow:visible}
+  .loadline path{
+    fill:none;stroke:var(--copper);stroke-width:2;
+    stroke-linecap:round;stroke-linejoin:round;
+  }
+  .loadline .grid{stroke:var(--line);stroke-width:1}
+  .loadline circle{fill:var(--signal);stroke:var(--paper);stroke-width:2.5}
+  .loadline text{
+    font-family:"Archivo",sans-serif;font-size:9px;font-weight:600;
+    fill:var(--muted);letter-spacing:0.02em;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .loadline path.trace{
+      stroke-dasharray:1200;stroke-dashoffset:1200;
+      animation:draw 1.5s cubic-bezier(.5,0,.2,1) .25s forwards;
+    }
+    .loadline circle{opacity:0;animation:pop .4s ease-out forwards}
+    .loadline circle:nth-of-type(1){animation-delay:.7s}
+    .loadline circle:nth-of-type(2){animation-delay:.95s}
+    .loadline circle:nth-of-type(3){animation-delay:1.2s}
+    .loadline circle:nth-of-type(4){animation-delay:1.45s}
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes pop{to{opacity:1}}
+
+  /* ---------- sections ---------- */
+  section{padding:3.5rem 0;border-top:1px solid var(--line)}
+
+  h2{
+    font-size:1.0625rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0 0 2rem;
+  }
+  h2::after{
+    content:"";display:block;width:2.25rem;height:3px;
+    background:var(--signal);margin-top:.5rem;
+  }
+
+  p{max-width:66ch}
+
+  /* current work */
+  .now p{font-size:1.1875rem;font-weight:300;line-height:1.6}
+  .now strong{font-weight:400;background:linear-gradient(transparent 62%, #F6DFA8 62%)}
+
+  /* experience rail */
+  .job{
+    display:grid;
+    grid-template-columns:6.5rem 1fr;
+    gap:0 1.5rem;
+    padding:1.25rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .job:last-child{border-bottom:0}
+  .job .years{
+    font-family:"Archivo",sans-serif;font-size:.8125rem;font-weight:600;
+    color:var(--muted);padding-top:.35rem;font-variant-numeric:tabular-nums;
+  }
+  .job h3{font-size:1.25rem;font-weight:700;margin:0;letter-spacing:-0.015em}
+  .job .role{color:var(--copper);font-size:.9375rem;margin:.15rem 0 .5rem}
+  .job p{margin:0;font-weight:300;color:#2C3735}
+  .job.current h3::after{
+    content:"";display:inline-block;width:.5rem;height:.5rem;
+    border-radius:50%;background:var(--signal);margin-left:.5rem;
+    vertical-align:middle;
+  }
+
+  /* projects */
+  .project{padding:1.5rem 0;border-bottom:1px solid var(--line)}
+  .project:last-child{border-bottom:0}
+  .project h3{font-size:1.125rem;margin:0 0 .35rem;font-weight:700}
+  .project p{margin:0 0 .5rem;font-weight:300}
+  .stack{
+    font-family:"Archivo",sans-serif;font-size:.75rem;font-weight:500;
+    color:var(--muted);
+  }
+
+  /* skills */
+  .skills{
+    display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none;
+  }
+  .skills li{
+    font-family:"Archivo",sans-serif;font-size:.8125rem;font-weight:500;
+    border:1px solid var(--line);padding:.3rem .7rem;border-radius:2px;
+    background:#F4F5F1;
+  }
+
+  /* contact */
+  .contact p{font-size:1.25rem;font-weight:300;max-width:38ch}
+  .links{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;font-family:"Archivo",sans-serif;font-size:.9375rem;font-weight:500}
+
+  footer{
+    padding:2.5rem 0 3.5rem;color:var(--muted);
+    font-family:"Archivo",sans-serif;font-size:.8125rem;
+  }
+
+  @media (max-width:34rem){
+    .job{grid-template-columns:1fr;gap:.25rem}
+    .job .years{padding-top:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- EDIT: name, headline, location -->
+  <header>
+    <h1>Your Name</h1>
+    <p class="lede">I build utility software — metering, billing and grid operations tools that people depend on every day.</p>
+    <p class="where">Software engineer · Toronto, Canada</p>
+
+    <svg class="loadline" viewBox="0 0 640 78" role="img" aria-label="Career timeline across four companies">
+      <line class="grid" x1="0" y1="62" x2="640" y2="62"></line>
+      <path class="trace" d="M0,54 C40,54 60,40 100,40 S170,26 210,26 S300,44 340,32 S440,18 480,22 S580,10 640,8"></path>
+      <circle cx="100" cy="40" r="4.5"></circle>
+      <circle cx="250" cy="27" r="4.5"></circle>
+      <circle cx="420" cy="20" r="4.5"></circle>
+      <circle cx="600" cy="9" r="4.5"></circle>
+      <text x="86" y="74">QT Logics</text>
+      <text x="230" y="74">Aura Design</text>
+      <text x="396" y="74">Tech Resources</text>
+      <text x="556" y="74">Control Solutions</text>
+    </svg>
+  </header>
+
+  <!-- EDIT: what you're doing right now -->
+  <section class="now">
+    <h2>What I'm working on now</h2>
+    <p>At <strong>Control Solutions</strong> I work on utility software for a large utility provider in Toronto. The work covers meter data handling, customer billing accuracy and the operational tools the field and support teams use — the kind of system where a rounding error shows up on someone's bill.</p>
+  </section>
+
+  <!-- EDIT: company names, years, and one line each -->
+  <section>
+    <h2>Where I've worked</h2>
+
+    <div class="job current">
+      <div class="years">2023 — now</div>
+      <div>
+        <h3>Control Solutions</h3>
+        <p class="role">Software Engineer</p>
+        <p>Utility software for an advanced utility provider in Toronto. Meter data, billing workflows and internal operations tooling.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="years">2021 — 2023</div>
+      <div>
+        <h3>Tech Resources</h3>
+        <p class="role">Software Engineer</p>
+        <p>Delivered client projects across web and backend services, working directly with product owners on scope and release planning.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="years">2019 — 2021</div>
+      <div>
+        <h3>Aura Design Solutions</h3>
+        <p class="role">Software Engineer</p>
+        <p>Built and maintained customer-facing applications, moving legacy screens onto a modern component-based front end.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="years">2017 — 2019</div>
+      <div>
+        <h3>QT Logics</h3>
+        <p class="role">Junior Software Engineer</p>
+        <p>First engineering role. Feature work, bug fixing and automated tests on a growing product team.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDIT: replace with your real projects -->
+  <section>
+    <h2>Selected projects</h2>
+
+    <div class="project">
+      <h3>Meter data processing pipeline</h3>
+      <p>Ingests interval readings from field devices, validates them against expected consumption patterns and flags anomalies before they reach billing.</p>
+      <p class="stack">C# · SQL Server · Azure Functions</p>
+    </div>
+
+    <div class="project">
+      <h3>Customer billing portal</h3>
+      <p>Self-service portal where customers view usage history, download statements and set up payment plans.</p>
+      <p class="stack">React · .NET Web API · PostgreSQL</p>
+    </div>
+
+    <div class="project">
+      <h3>Outage reporting dashboard</h3>
+      <p>Internal dashboard that maps live outage reports and estimated restoration times for dispatch staff.</p>
+      <p class="stack">TypeScript · Node.js · Leaflet</p>
+    </div>
+  </section>
+
+  <!-- EDIT: your real stack -->
+  <section>
+    <h2>Tools I work with</h2>
+    <ul class="skills">
+      <li>C#</li><li>.NET</li><li>JavaScript</li><li>TypeScript</li>
+      <li>React</li><li>Node.js</li><li>SQL Server</li><li>PostgreSQL</li>
+      <li>REST APIs</li><li>Azure</li><li>Docker</li><li>Git</li>
+    </ul>
+  </section>
+
+  <!-- EDIT: your real links -->
+  <section class="contact">
+    <h2>Get in touch</h2>
+    <p>Open to conversations about utility systems, backend work and anything with messy real-world data behind it.</p>
+    <div class="links">
+      <a href="mailto:you@example.com">you@example.com</a>
+      <a href="https://github.com/yourusername">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      <a href="resume.pdf">Résumé</a>
+    </div>
+  </section>
+
+  <footer>Built and hosted on GitHub Pages.</footer>
+
+</div>
+
+</body>
+</html>
